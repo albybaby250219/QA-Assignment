@@ -1,9 +1,13 @@
 import './style.scss';
 
-import {title} from './title.js';
+document.querySelector('#app').innerHTML = `
+<h1>An outline on quality assurance and security </h1> 
+`;
 
-import json from './heading.json';
-
-const app = document.getElementById('app');
-
-title(app, json.homepage.title);
+document.querySelector('#header').innerHTML = `
+<ul>
+<li><a href="./views/quality_assurance.html">Quality Assurance</a></li>
+<li><a href="./views/security.html">Security</a></li>
+<li><a href="./views/bad_example.html">Bad Example</a></li>
+</ul>
+` ;

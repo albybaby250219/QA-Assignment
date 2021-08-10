@@ -1,8 +1,56 @@
+body{
+  background-color: black;
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: #fff;
   margin-top: 60px;
+  max-width:800px;
+  margin:auto;
+  min-height: 100vh;
+  height:500px;
+  background-image: url(/images/key.jpg);
+}
+#header{
+  max-width:800px;
+  margin:auto;
+  background:coral;
+  padding:20px;
+  margin-bottom: 0;
+  position:relative;
+}
+#header ul{
+  position:absolute;
+  top:0;
+  right:0;
+
+}
+#header li{
+  display:inline;
+  margin-right:20px;
+  list-style-type: none;
+ 
+
+}
+#header a{
+  text-decoration: none;
+  color:black;
+  margin-right:30px;
+  font-size:20px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  
+}
+#footer{
+  max-width:800px;
+  margin:auto;
+  background:coral;
+  color:black;
+}
+.subsection{
+  color:white;
+  text-align:center;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
