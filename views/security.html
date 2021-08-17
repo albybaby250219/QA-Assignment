@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
     <title>Vite App</title>
   </head>
   <body>
@@ -66,19 +67,6 @@
           information leakage. The value no-referrer of this header instructs the browser to omit the Referer header entirely.
         </p>
     </li>
-    <li><h3>Missing security header: </h3>
-      <p>Response headers do not include the Referrer-Policy HTTP security header       
-      The Referrer-Policy HTTP header controls how much referrer information the browser will send with each request 
-      originated from the current web application. For instance, if a user visits the web page<q>http://example.com/pricing</q>
-      and it clicks on a link from  that page going to e.g. <q>https://www.google.com</q>, the browser will send to Google the full 
-      originating URL in the Referer header, assuming the Referrer-Policy header is not set. The originating URL could be considered 
-      sensitive information and it could be used for user tracking.
-      </p>
-      <h4>Solution</h4>
-      <p>The Referrer-Policy header should be configured on the server side to avoid user tracking and inadvertent 
-        information leakage. The value no-referrer of this header instructs the browser to omit the Referer header entirely.
-      </p>
-  </li>
         </ol>
       </div>
     </main>
