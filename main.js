@@ -1,4 +1,9 @@
 import './style.scss';
+let documentation = {
+    "name" : 'Alby Baby', 
+    "Date" : '2021-08-17'};
+    
+export{documentation};
 let [first , second , third] = ['Quality Assurance','Security','Bad Example'];
 let main = `<h1>An outline on quality assurance and security </h1>
 <p>The security and QA is an important factor in keeping our websites safe from attacks and to keep our code easier to read and understand.</p>
