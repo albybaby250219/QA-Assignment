@@ -18,6 +18,69 @@
       <div id="security">
           <h1 class="subsection">Security</h1>
       </div>
+      <div>
+        <h2>Security issues and how I resolved it</h2>
+        <p>To find out about the security issues of the website I used a site called <a href="https://securityheaders.com/" >Security headers</a> 
+          which provide a detailed report about the security issues</p>
+        <ol>
+          <li><h3>Missing security header: X-Frame-Options</h3>
+              <p>Response headers do not include the HTTP X-Frame-Options security header
+                Because the X-Frame-Options header is not sent by the server,
+                 an attacker could embed this website into an iframe of a third party website. 
+                 By manipulating the display attributes of the iframe, the attacker could trick the user into performing 
+                 mouse clicks in the application, thus performing activities without user's consent 
+                 (ex: delete user, subscribe to newsletter, etc).
+              </p>
+              <h4>Solution</h4>
+              <p>Added the X-Frame-Options HTTP header with values DENY or SAMEORIGIN to every page 
+                that has to be protected against Clickjacking attacks.</p>
+          </li>
+          <li><h3>Missing security header: X-XSS-Protection</h3>
+            <p>Response headers do not include the HTTP X-XSS-Protection security header
+              The X-XSS-Protection HTTP header instructs the browser to stop loading web pages when they detect
+               reflected Cross-Site Scripting (XSS) attacks. Lack of this header exposes application users to XSS attacks 
+               in case the web application contains such vulnerability.
+            </p>
+            <h4>Solution</h4>
+            <p>Setting the X-XSS-Protection header to X-XSS-Protection: 1; mode=block.</p>
+        </li>
+        <li><h3>Missing security header: X-Content-Type-Options</h3>
+          <p>Response headers do not include the X-Content-Type-Options HTTP security header
+            The HTTP header X-Content-Type-Options is addressed to the Internet Explorer browser and prevents 
+            it from reinterpreting the content of a web page (MIME-sniffing) and thus overriding the value of the Content-Type header).
+             Lack of this header could lead to attacks such as Cross-Site Scripting or phishing.  
+          </p>
+          <h4>Solution</h4>
+          <p>Setting the X-Content-Type-Options header such as X-Content-Type-Options: nosniff.</p>
+      </li>
+      <li><h3>Missing security header: Referrer-Policy</h3>
+        <p>Response headers do not include the Referrer-Policy HTTP security header       
+        The Referrer-Policy HTTP header controls how much referrer information the browser will send with each request 
+        originated from the current web application. For instance, if a user visits the web page<q>http://example.com/pricing</q>
+        and it clicks on a link from  that page going to e.g. <q>https://www.google.com</q>, the browser will send to Google the full 
+        originating URL in the Referer header, assuming the Referrer-Policy header is not set. The originating URL could be considered 
+        sensitive information and it could be used for user tracking.
+        </p>
+        <h4>Solution</h4>
+        <p>The Referrer-Policy header should be configured on the server side to avoid user tracking and inadvertent 
+          information leakage. The value no-referrer of this header instructs the browser to omit the Referer header entirely.
+        </p>
+    </li>
+    <li><h3>Missing security header: </h3>
+      <p>Response headers do not include the Referrer-Policy HTTP security header       
+      The Referrer-Policy HTTP header controls how much referrer information the browser will send with each request 
+      originated from the current web application. For instance, if a user visits the web page<q>http://example.com/pricing</q>
+      and it clicks on a link from  that page going to e.g. <q>https://www.google.com</q>, the browser will send to Google the full 
+      originating URL in the Referer header, assuming the Referrer-Policy header is not set. The originating URL could be considered 
+      sensitive information and it could be used for user tracking.
+      </p>
+      <h4>Solution</h4>
+      <p>The Referrer-Policy header should be configured on the server side to avoid user tracking and inadvertent 
+        information leakage. The value no-referrer of this header instructs the browser to omit the Referer header entirely.
+      </p>
+  </li>
+        </ol>
+      </div>
     </main>
     <footer>
       <p>This is a test website</p>

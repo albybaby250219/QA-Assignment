@@ -1,0 +1,11 @@
+[context.production]
+  environment = { NODE_VERSION = "14.15.1" }
+  [[headers]]
+    for = "/*"
+    [headers.values]
+      X-Frame-Options = "SAMEORIGIN"
+      X-XSS-Protection = "1; mode=block"
+      Referrer-Policy = "no-Referrer"
+      Content-Security-Policy = "script-src 'self'"
+      X-Content-Type-Options = "nosniff"
+      Permissions-Policy = "geolocation=(self 'https://qa-assignment4.netlify.app/'), microphone=(), camera=(), fullscreen=*"
